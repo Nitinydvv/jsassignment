@@ -1,0 +1,46 @@
+// Step 1: Initialize an array to store NFT objects
+let nftGallery = [];
+
+// Step 2: Function to create an NFT and add it to the gallery
+function mintNFT(title, creator, creationYear, description) {
+  const nft = {
+    title: title,
+    creator: creator,
+    creationYear: creationYear,
+    description: description
+  };
+  nftGallery.push(nft);
+}
+
+// Step 3: Function to list all NFTs in the gallery using a while loop
+function listNFTs() {
+  let index = 0;
+  while (index < nftGallery.length) {
+    const nft = nftGallery[index];
+    console.log(`NFT #${index + 1}`);
+    console.log(`Title: ${nft.title}`);
+    console.log(`Creator: ${nft.creator}`);
+    console.log(`Creation Year: ${nft.creationYear}`);
+    console.log(`Description: ${nft.description}`);
+    console.log('---------------------');
+    index++;
+  }
+}
+
+// Step 4: Function to get the total number of NFTs
+function getTotalSupply() {
+  return nftGallery.length;
+}
+
+// Call functions to demonstrate functionality
+
+// Minting some NFTs
+mintNFT("CryptoPunk", "rajan", 1999, "One of the first NFT projects.");
+mintNFT("Bored Ape", "probhit", 2004, "A popular collection of unique apes.");
+mintNFT("Art Blocks", "sumit", 2018, "Generative art on the blockchain.");
+
+// Listing all NFTs
+listNFTs();
+
+// Printing the total supply of NFTs
+console.log(`Total NFTs minted: ${getTotalSupply()}`);
